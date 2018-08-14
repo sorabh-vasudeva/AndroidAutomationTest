@@ -47,7 +47,7 @@ import static org.hamcrest.Matchers.not;
 
 public class LoginFunctionality {
 
-    private String validUserName = "crazydo335";
+    private String validUserName = "crazydog335";
     private String validPassword = "venture";
 
     @Rule
