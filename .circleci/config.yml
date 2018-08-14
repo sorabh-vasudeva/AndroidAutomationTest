@@ -8,7 +8,10 @@ working_directory:~/repo
 environment:
       JVM_OPTS: -Xmx3200m
       TERM: dumb
-    steps:
+test:
+docker:
+      - image: circleci/android:api-25-alpha   
+ steps:
       - checkout
       - restore_cache:
           key: jars-{{ checksum "build.gradle" }}-{{ checksum  "app/build.gradle" }}
@@ -30,3 +33,9 @@ environment:
           destination: reports
       - store_test_results:
           path: app/build/test-results
+workflows:
+  version: 2
+  build_and_test:
+    jobs:
+      - build
+      - test
