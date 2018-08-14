@@ -3,8 +3,6 @@ jobs:
   build:
     docker:
       - image: circleci/android:api-25-alpha
-working_directory:~/repo
-
 environment:
       JVM_OPTS: -Xmx3200m
       TERM: dumb
