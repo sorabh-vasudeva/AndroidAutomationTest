@@ -9,6 +9,7 @@ import android.support.test.rule.GrantPermissionRule;
 
 
 import android.support.test.runner.AndroidJUnit4;
+import android.util.Log;
 
 import org.junit.FixMethodOrder;
 import org.junit.Rule;
@@ -67,7 +68,7 @@ public class LoginFunctionality {
         onView(withId(R.id.edt_username)).perform(clearText());
         onView(withId(R.id.edt_password)).perform(clearText());
         onView(withId(R.id.btn_login)).perform(click());
-        onView(isRoot()).perform(SearchDriverFunctionality.waitFor(1000));
+        onView(isRoot()).perform(SearchDriverFunctionality.waitFor(2000));
 
         //Verify error message for blank username and password is displayed
         onView(withText(R.string.blank_username_password))
@@ -85,7 +86,7 @@ public class LoginFunctionality {
         onView(withId(R.id.edt_username)).perform(clearText());
         onView(withId(R.id.edt_password)).perform(typeText(validPassword));
         onView(withId(R.id.btn_login)).perform(click());
-        onView(isRoot()).perform(SearchDriverFunctionality.waitFor(1000));
+        onView(isRoot()).perform(SearchDriverFunctionality.waitFor(2000));
 
         //Verify error message for blank username is displayed
         onView(withText(R.string.blank_username))
